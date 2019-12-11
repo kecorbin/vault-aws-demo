@@ -89,7 +89,7 @@ sudo bash -c "cat >/root/unseal/s1_reconfig.sh" <<EOF
 cat >>/etc/vault.d/vault.hcl <<VAULTCFG
 
 seal "awskms" {
-    region = "us-west-2"
+    region = "${AWS_REGION}"
     kms_key_id = "${AWS_KMS_KEY_ID}"
 }
 VAULTCFG

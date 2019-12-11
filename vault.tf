@@ -6,6 +6,7 @@ data "template_file" "vault_setup" {
     vars = {
         AWS_ACCESS_KEY = "${var.aws_access_key}"
         AWS_SECRET_KEY = "${var.aws_secret_key}"
+        AWS_REGION = "${var.aws_region}"
         AMI_ID = "${data.aws_ami.ubuntu.id}"
         MYSQL_HOST = "${aws_db_instance.vault-mysql.endpoint}"
         MYSQL_USER = "${var.mysql_user}"
